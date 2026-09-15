@@ -1,0 +1,823 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+  --bg: #fffbea;
+  --ink: #1b1b3a;
+  --pink: #ff5d8f;
+  --mint: #2fd897;
+  --blue: #4d7cff;
+  --card-bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: 'Nunito', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand,
+.nav-link {
+  font-family: 'Fredoka', sans-serif;
+}
+
+/* Decorative blobs sitting behind content — one per page, used sparingly */
+.blob {
+  position: absolute;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  z-index: 0;
+  filter: blur(2px);
+  opacity: 0.55;
+}
+
+
+/* Navbar */
+.navbar {
+  background-color: var(--bg) !important;
+  border-bottom: 3px solid var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--ink) !important;
+}
+
+.navbar-nav .nav-link {
+  color: var(--ink) !important;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.4rem 1rem !important;
+  margin-left: 0.25rem;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: var(--pink);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+  background-color: var(--ink);
+  color: #ffffff !important;
+}
+
+
+/* Hero section (index page) */
+.hero-heading {
+  font-weight: 700;
+  font-size: 3rem;
+  position: relative;
+  z-index: 1;
+  animation: pop-in 0.5s ease;
+}
+
+.hero-lead {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 1.25rem;
+  opacity: 0.75;
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: var(--card-bg);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.4rem 1.1rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 3px 3px 0 var(--pink);
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* Page heading + intro text (e.g. coop.html) */
+.page-heading {
+  font-weight: 700;
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.page-lead {
+  color: var(--ink);
+  opacity: 0.75;
+  font-weight: 600;
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Icon link cards (used on the home page hero) */
+.page-link-card {
+  --card-accent: var(--mint);
+  display: block;
+  height: 100%;
+  background-color: var(--card-bg);
+  color: var(--ink);
+  text-decoration: none;
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  box-shadow: 6px 6px 0 var(--card-accent);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.page-link-card:hover {
+  color: var(--ink);
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--ink);
+}
+
+.page-link-card.link-pink {
+  --card-accent: var(--pink);
+}
+
+.page-link-card.link-blue {
+  --card-accent: var(--blue);
+}
+
+.page-link-icon {
+  display: block;
+  font-size: 2rem;
+  color: var(--card-accent);
+  margin-bottom: 0.75rem;
+}
+
+.page-link-card h5 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.page-link-card p {
+  margin-bottom: 0;
+  opacity: 0.75;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+
+/* Education page: courses grouped by term */
+.term-block {
+  margin-bottom: 1.75rem;
+}
+
+.term-block:last-child {
+  margin-bottom: 0;
+}
+
+.term-label {
+  font-family: 'Fredoka', sans-serif;
+  color: var(--blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--blue);
+  display: inline-block;
+}
+
+.course-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.course-list li {
+  margin-bottom: 0.4rem;
+}
+
+.course-list li:last-child {
+  margin-bottom: 0;
+}
+
+.course-list strong {
+  color: var(--ink);
+}
+
+.course-example-caption {
+  font-size: 0.8rem;
+  opacity: 0.65;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.course-example-image-wrap {
+  height: 190px;
+  border-radius: 8px;
+  border: 2px solid var(--ink);
+  overflow: hidden;
+}
+
+.course-example-image-fill {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* About Me: hobbies/interests list */
+.hobbies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+.hobby-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+}
+
+.hobby-icon {
+  font-size: 1.3rem;
+  color: var(--mint);
+}
+
+.hobby-item--pink .hobby-icon {
+  color: var(--pink);
+}
+
+.hobby-item--blue .hobby-icon {
+  color: var(--blue);
+}
+
+.hobbies-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.hobbies-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--ink);
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .hobbies-photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* Back link on detail pages */
+.back-link {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  background-color: var(--mint);
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.4rem 1.1rem;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.back-link:hover {
+  color: var(--ink);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+
+/* Card used in listing grids (e.g. coop.html) */
+.coop-card {
+  background-color: var(--card-bg);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  box-shadow: 7px 7px 0 var(--pink);
+  transform: rotate(-1deg);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.row .col-12:nth-child(3n+2) .coop-card {
+  box-shadow: 7px 7px 0 var(--mint);
+  transform: rotate(1deg);
+}
+
+.row .col-12:nth-child(3n+3) .coop-card {
+  box-shadow: 7px 7px 0 var(--blue);
+  transform: rotate(-0.75deg);
+}
+
+.coop-card:hover {
+  transform: rotate(0deg) translate(-3px, -3px);
+  box-shadow: 10px 10px 0 var(--ink);
+  color: var(--ink);
+}
+
+.coop-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 3px solid var(--ink);
+}
+
+.coop-card-body {
+  padding: 1rem 1.25rem 1.5rem;
+}
+
+.coop-card-body h5 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.35;
+}
+
+
+/* Content panel used on detail pages */
+.content-card {
+  background-color: var(--card-bg);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  box-shadow: 8px 8px 0 var(--blue);
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.content-card h1 {
+  font-weight: 700;
+}
+
+.meta-label {
+  font-weight: 700;
+  color: var(--pink);
+}
+
+
+/* ==========================================
+   WORK TERM REPORT
+   ========================================== */
+
+
+/* Report layout */
+.report-layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2.5rem;
+}
+
+/* Table of Contents */
+.table-of-contents {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+  height: calc(100vh - 100px - 2rem);
+  border-right: 2px solid var(--blue);
+  padding-right: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Contents header */
+.table-of-contents h5 {
+  flex-shrink: 0;
+  color: var(--blue);
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+/* Scrollable Contents links */
+.contents-links {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 0.25rem;
+  padding-right: 0.5rem;
+}
+
+.table-of-contents a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 0;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.table-of-contents a:hover {
+  color: var(--blue);
+  transform: translateX(4px);
+}
+
+/* Goal links inside Contents */
+.contents-subitems {
+  padding-left: 1rem;
+  border-left: 2px solid var(--blue);
+  margin-left: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.contents-subitems a {
+  font-size: 0.9rem;
+  padding: 0.1rem 0;
+  line-height: 1.3;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Keep headings visible below the navbar */
+.report-content h5,
+.goal-card {
+  scroll-margin-top: 100px;
+}
+
+
+/* Report Header */
+.report-header {
+  margin-bottom: 1.5rem;
+}
+
+.report-label {
+  color: var(--pink);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.25rem;
+}
+
+.report-header h1 {
+  color: var(--ink);
+  font-size: 2.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.report-intro {
+  color: var(--ink);
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0.65;
+  margin-bottom: 1.25rem;
+}
+
+.report-meta {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.report-meta div {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-label {
+  color: var(--pink);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.report-meta span:last-child {
+  font-weight: 600;
+}
+
+
+/* Report body copy — readability pass */
+.report-content {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.report-content p {
+  margin-bottom: 1.25rem;
+}
+
+/* Section headers (Introduction, Goals, Job Description, etc.) */
+.report-content h5 {
+  color: var(--ink);
+  font-size: 1.6rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--mint);
+  display: inline-block;
+}
+
+
+/* Goals */
+.goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+
+/* Individual goal card */
+.goal-card {
+  display: grid;
+  grid-template-columns: 65px 1fr;
+  gap: 1rem;
+  background-color: var(--card-bg);
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 1.25rem;
+  transition: transform 0.15s ease;
+}
+
+.goal-card:hover {
+  transform: translateY(-2px);
+}
+
+
+/* Goal number */
+.goal-number {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--pink);
+  padding-top: 0.1rem;
+}
+
+
+/* Goal title */
+.goal-card h4 {
+  color: var(--pink);
+  margin: 0 0 1.25rem;
+  font-size: 1.4rem;
+}
+
+
+/* Goal section */
+.goal-section {
+  margin-bottom: 1.1rem;
+  border-left: 3px solid var(--bg);
+  padding-left: 0.9rem;
+  transition: border-color 0.15s ease;
+}
+
+.goal-section:hover {
+  border-left-color: var(--pink);
+}
+
+
+/* Goal section headers */
+.goal-section h6 {
+  display: inline-block;
+  color: var(--pink);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.2rem;
+}
+
+
+/* Goal section text */
+.goal-section p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+/* Goal description */
+.goal-description {
+  font-weight: 600;
+  opacity: 0.75;
+  margin-bottom: 1rem;
+}
+
+
+/* Remove extra space at bottom of goal */
+.goal-card p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Goals Conclusion */
+.goals-conclusion {
+  color: var(--pink);
+  margin-top: 2rem;
+}
+
+
+/* Job Description: role summary + focus areas panels (kept subtle) */
+.role-summary {
+  border-left: 4px solid var(--mint);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.role-summary p {
+  margin-bottom: 0;
+}
+
+.focus-areas {
+  background-color: var(--card-bg);
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.focus-areas-label {
+  font-family: 'Fredoka', sans-serif;
+  color: var(--pink);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.focus-areas ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.focus-areas ul li {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.focus-areas ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Job Description: labeled subsections (Frontend, Backend, Debugging, etc.) */
+.job-subsection {
+  margin: 1.5rem 0;
+}
+
+.job-subsection-label {
+  font-family: 'Fredoka', sans-serif;
+  color: var(--blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--blue);
+  display: inline-block;
+}
+
+.job-subsection p {
+  margin-bottom: 0;
+}
+
+
+/* Conclusion: closing takeaway callout */
+.closing-takeaway {
+  background-color: var(--card-bg);
+  border: 2px solid var(--ink);
+  border-left: 5px solid var(--pink);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+.closing-takeaway p {
+  margin-bottom: 0;
+}
+
+
+/* Acknowledgements: simple thank-you card */
+.acknowledgements-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  margin: 1.25rem 0;
+}
+
+.acknowledgements-card p {
+  margin-bottom: 1rem;
+}
+
+.acknowledgements-card p:last-child {
+  margin-bottom: 0;
+}
+
+.acknowledgements-card strong {
+  color: var(--pink);
+}
+
+
+/* Employer Section */
+.employer-row {
+  margin: 30px 0;
+  align-items: center;
+}
+
+.employer-row p {
+  margin-bottom: 1rem;
+}
+
+.report-image {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.logo-image {
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.portrait-photo {
+  max-height: 480px;
+  object-position: top center;
+}
+
+
+/* Mobile layout */
+@media (max-width: 768px) {
+
+  .report-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .table-of-contents {
+    position: static;
+    border-right: none;
+    border-bottom: 2px solid var(--pink);
+    padding-right: 0;
+    padding-bottom: 1rem;
+    height: auto;
+  }
+
+  .table-of-contents a {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  .contents-subitems {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .contents-subitems a {
+    font-size: 0.85rem;
+    margin-right: 0.75rem;
+  }
+
+  .goal-card {
+    grid-template-columns: 45px 1fr;
+  }
+
+  .report-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .report-meta {
+    gap: 1rem;
+  }
+
+}
